@@ -55,7 +55,7 @@ public class IndexControllerTest {
         String viewName = indexController.getIndexPage(model);
 
         // Then: Assert and verify
-        assertEquals("index...", viewName);
+        assertEquals("index......", viewName);
         // Verify interactions between mocks and controller
         // Verify that mocks methods are really being executed.
         verify(recipeService, times(1)).getRecipes();
