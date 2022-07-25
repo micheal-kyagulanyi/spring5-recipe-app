@@ -2,11 +2,13 @@ package guru.springframework.controllers;
 
 import guru.springframework.domain.Recipe;
 import guru.springframework.services.RecipeService;
+import org.assertj.core.internal.bytebuddy.asm.Advice;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.test.context.junit.jupiter.DisabledIf;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
@@ -55,7 +57,7 @@ public class IndexControllerTest {
         String viewName = indexController.getIndexPage(model);
 
         // Then: Assert and verifyq
-        assertEquals("index...", viewName);
+        assertEquals("index", viewName);
         // Verify interactions between mocks and controller
         // Verify that mocks methods are really being executed.
         verify(recipeService, times(1)).getRecipes();
